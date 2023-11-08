@@ -57,6 +57,7 @@ extension HomeViewController : HomeViewControllerInterface {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.bounces = false
+        tableView.backgroundColor = .white
         tableView.register(MovieCell.self, forCellReuseIdentifier: MovieCell.reuseID)
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -68,12 +69,12 @@ extension HomeViewController : HomeViewControllerInterface {
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
         
-        tableView.backgroundColor = .systemPurple
+        
         
     }
     
     func configureVC() {
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .white
     }
 }
 
@@ -83,7 +84,7 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource, UISea
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        let cellHeight: CGFloat = 300 
+        let cellHeight: CGFloat = 300
         return cellHeight
         
     }
@@ -98,7 +99,7 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource, UISea
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MovieCell.reuseID, for: indexPath) as! MovieCell
-        
+        cell.backgroundColor = .white
         cell.setCell(movie: viewModel.movies[indexPath.row])
         
         return cell

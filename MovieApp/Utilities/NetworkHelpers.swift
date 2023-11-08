@@ -17,4 +17,8 @@ class NetworkHelpers {
         "http://img.omdbapi.com/?apikey=e4d6fa3b&i=\(imdbID)"
     }
     
+    static func titleURL(title: String) -> String {
+        "http://www.omdbapi.com/?apikey=e4d6fa3b&t=\(title)"
+    }
+    
 }

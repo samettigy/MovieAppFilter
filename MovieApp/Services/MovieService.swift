@@ -10,7 +10,7 @@ import Foundation
 class MovieService {
     
     func fetchMovies(completion: @escaping ([MovieResult]?) -> ()) {
-        guard let url = URL(string: NetworkHelpers.movies(query: "lord")) else {
+        guard let url = URL(string: NetworkHelpers.movies(query: "batman")) else {
             return
         }
         
